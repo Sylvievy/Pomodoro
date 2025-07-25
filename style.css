@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    background-color: rosybrown;
+    font-family:monospace;
+    color: floralwhite;
+    min-height: 100vh;
+    display: flex;  
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    padding: 1em;
+}
+
+.main{
+    display: flex;  
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    gap: 2em;
+    padding: 2em;
+    margin: 2em;
+
+    max-width: 90%;
+    min-width: 300px;
+
+    
+}
+
+.ctrlButtons{
+    display: flex;  
+    flex-direction: row;
+    align-items:center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+
+    width: 100%;
+    padding: 1em;
+}
+
+.timerBox{
+    font-size: 8em;
+    text-align: center;
+    max-width: 100%;
+    
+}
+
+.button{
+    background-color: floralwhite;
+    color: rosybrown;
+    border: 1px solid floralwhite;
+    padding: 0.5em 1em;
+    font-size: 1.5em;
+    cursor:pointer;
+    border-radius: 1.5em;
+    flex-basis: auto;
+    min-width: fit-content;
+    white-space: nowrap;
+}
+
+.button:hover{
+    background-color: rosybrown;
+    color: floralwhite;
+    border-radius: 1.5em;
+    border: 1px solid floralwhite;
+}
+
+@media (max-width: 600px) {
+    .main{
+        padding: 1em;
+        margin: 1em;
+        width: 95%;
+    }
+    .timerBox{
+        font-size: 5em;
+    }
+    .button{
+        font-size: 1.2em;
+        padding: 0.5em 0.8em;
+    }
+    .ctrlButtons{
+       justify-content: space-around;
+        align-items: center;
+        gap: 0.5em;
+    }
+}
