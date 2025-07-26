@@ -1,3 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&family=Syne+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
+
+.syne-mono-regular {
+  font-family: "Syne Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+.pangolin-regular {
+  font-family: "Pangolin", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.coming-soon-regular {
+  font-family: "Coming Soon", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
 *{
     margin: 0;
     padding: 0;
@@ -6,9 +27,9 @@
 }
 
 body{
-    background-color: rosybrown;
-    font-family:monospace;
-    color: floralwhite;
+    background-color: #282828;
+  font-family: "Pangolin", cursive;
+    color: #F9FDE5;
     min-height: 100vh;
     display: flex;  
     flex-direction: column;
@@ -52,9 +73,9 @@ body{
 }
 
 .button{
-    background-color: floralwhite;
-    color: rosybrown;
-    border: 1px solid floralwhite;
+    background-color: #F9FDE5;
+    color: #282828;
+    border: 1px solid #F9FDE5;
     padding: 0.5em 1em;
     font-size: 1.5em;
     cursor:pointer;
@@ -65,10 +86,10 @@ body{
 }
 
 .button:hover{
-    background-color: rosybrown;
-    color: floralwhite;
+    background-color: #282828;
+    color: #F9FDE5;
     border-radius: 1.5em;
-    border: 1px solid floralwhite;
+    border: 1px solid #F9FDE5;
 }
 
 @media (max-width: 600px) {

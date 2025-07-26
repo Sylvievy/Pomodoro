@@ -8,17 +8,58 @@
 </head>
 <body>
     <div class="main">
-        <div class="timerBox" id="timer">
-            24:00
+        <div class="headerBox">
+            <div class="appTitleInfo">
+                <h1 class="appTitle">POMODI</h1>
+                <span class="infoIcon">i</span>
+            </div>
+            <div class="sessionsInfo">
+                <span class="sessionLabel">Sessions completed</span>
+                <span class="sessionCount">007</span>
+            </div>
         </div>
 
-        <div class="ctrlButtons">
-            <button class="button" id="playPauseBtn" >Pause</button>
-            <button class="button" id="resetBtn" >Reset</button>
+        <div class="sessionBox">
+            <div class="ctrlButtons">
+                 <button class="button" id="playPauseBtn" >Pause</button>
+                 <button class="button" id="resetBtn" >Reset</button>
+            </div>
+            <div class="sessionButtons">
+                <button class="">25:00</button>
+                <button class="">30:00</button>
+                <button class="">35:00</button>
+                <button class="">40:00</button>
+                <button class="">45:00</button>
+                <button class="">50:00</button>
+                <button class="">custom</button>
+            </div>
         </div>
 
+        <div class="timerdisplayBox">
+            <div class="timerBox">
+                <span class="timer"  id="timer">24:00</span>
+                <span class="taskName">task name</span>
+            </div>
+            <div class="estimatedTime"> 
+                <span>Estimated time: 10 Hrs</span>
+                <span>Remaining: 4 Hrs</span>
+            </div>
+        </div>
+
+        <div class="tasksBox">
+            <h2>Tasks</h2>
+
+            <div class="addTaskContainer">
+                <input type="text" id="newTaskInput" 
+                placeholder="Add a task?" />
+                <button id="addTaskButton">+</button>
+            </div>
+
+            <ul id="taskList">
+            </ul>
     </div>
 
     <script src="script.js" defer></script>
 </body>
 </html>
+
