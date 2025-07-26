@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@0;1&display=swap');
+
 
 
 *{
@@ -10,7 +11,8 @@
 
 body{
     background-color: #282828;
-    font-family: "Crimson Pro", serif;
+    font-family: "Xanh Mono", monospace;
+    font-weight: 200;
     color: #eff0ea;
     height: 100vh;
     display: flex;  
@@ -24,9 +26,11 @@ body{
     /* border: 0.1em outset #eff0ea; */
     /* margin:1em; */
     display: flex;
-    padding:0.5em;
+    padding:2.5em;
     height: 100%;
-    min-width: 45%;
+    min-width: 70%;
+    /* max-width:40em ; */
+    margin: 1em auto;
     align-items: stretch;
     flex-direction: column;
 }
@@ -51,18 +55,29 @@ body{
     gap: 10em;
     flex:2;
     /* margin-right: 0.5em; */
-    padding: 1em;
+    padding-left: 0.5em;
+    font-size: 2em;
+
     /* border-right:0.1em solid #eff0ea; */
     /* border: 1px solid #eff0ea; */
 }
 
+
 .sessionsInfo{
     padding: 0.5em;
     display: flex;
-     flex: initial;
-    width:10.2em;
+    flex: initial;
+    width:13em;
     justify-content:space-between;
     border-left: #eff0ea 0.1em solid;
+}
+
+.appInfo,
+.sessionsInfo,
+.estimatedTime,
+.ctrlButtons,
+.sessionButtons{
+    font-size: 1em;
 }
 
 .appInfo{
@@ -84,8 +99,9 @@ body{
     justify-content:space-between;
     align-items: baseline;
     border-top: 0.1em solid #eff0ea;
-    padding: 0.2em;
-    /* flex: 1 1 auto; */
+    padding: 0.1em;
+    flex: 0 1 auto; 
+    font-size: large;
     /* border: #eff0ea 1px solid; */
     
 
@@ -95,12 +111,13 @@ body{
 .sessionButtons{
     display: flex;
     flex-direction: row;
-    justify-content:space-evenly;
+    justify-content:space-between;
     align-items: center;
     gap: 2em;
     margin: 0.5em;
     flex-wrap: wrap;
-
+    padding-left: 0.5em;
+    
 }
 .ctrlButtons{
     border-right:0.1em solid #eff0ea;
@@ -108,7 +125,7 @@ body{
 
 button{
     border: none;
-    font-family: "Pangolin", cursive;
+  font-family: "Xanh Mono", monospace;
     color: #eff0ea;
     background-color: #282828;
 }
@@ -116,7 +133,7 @@ button{
 .timerDisplayBox{
     display: flex;
     flex-direction: row;
-    justify-content:start;
+    justify-content:flex-start;
     /* align-items:; */
     /* gap: 3.62em; */
     border-top: 0.1em solid #eff0ea;
@@ -161,22 +178,32 @@ button{
     border-left:0.1em solid #eff0ea;
     padding: 0.5em;
     display: flex;
-     flex: initial;
-    width:10.2em;
+    flex: initial;
+    width:13em;
 }
 
 .tasksBox{
     display: flex;
     flex-direction: column;
-    justify-content:start;
-    align-items: start;
+    justify-content:flex-start;
+    align-items: flex-start;
     border-top: 0.1em solid #eff0ea;
     border-bottom: 0.1em solid #eff0ea;
-    
     flex: 3 1 auto;
     /* border: #eff0ea 1px solid; */
 
-    padding: 0.5em;
+    padding:1em 1em;
+}
+
+h3{
+    padding-left: 0.5em;
+    font-weight: 500;
+    font-size:1.52em;
+}
+
+h1,h2{
+    font-weight: 600;
+    color: #eff0ea;
 }
 
 .addTaskContainer, #taskList{
@@ -196,5 +223,7 @@ input{
 input:focus{
     outline: none;
     border:none;
+    font-family: "Xanh Mono", monospace;
+
 }
 
