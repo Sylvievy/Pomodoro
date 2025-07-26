@@ -11,18 +11,20 @@
         <div class="headerBox">
             <div class="appTitleInfo">
                 <h2 class="appTitle">POMODI</h2>
-                <span class="infoIcon">i</span>
+            </div>
+            <div class="appInfo">
+                 <span class="infoIcon">i</span>
             </div>
             <div class="sessionsInfo">
-                <span class="sessionLabel">Sessions spent:</span>
+                <span class="sessionLabel">sessions <br>spent:</span>
                 <span class="sessionCount">007</span>
             </div>
         </div>
 
         <div class="sessionBox">
             <div class="ctrlButtons">
-                 <button class="button" id="playPauseBtn" >Pause</button>
-                 <button class="button" id="resetBtn" >Reset</button>
+                 <button class="button" id="playPauseBtn" >pause</button>
+                 <button class="button" id="resetBtn" >reset</button>
                  <span class="divider"></span>
             </div>
             <div class="sessionButtons">
@@ -32,17 +34,19 @@
                 <button class="">40:00</button>
                 <button class="">45:00</button>
                 <button class="">50:00</button>
-                <button class="">custom</button>
+                <button class="">Custom</button>
             </div>
         </div>
 
         <div class="timerDisplayBox">
             <div class="timerBox">
-                <h1 class="timer"  id="timer">24:00</h1>
-                <span class="taskName">task name</span>
+                <h1 class="timer"  id="timer">28:00</h1>
+                <div class="taskName">
+                    <input type="text" id="taskNameInput" placeholder="Enter task name..."/>
+                </div>
             </div>
             <div class="estimatedTime"> 
-                <span>Estimated time: 10 Hrs</span>
+                <span>Estimated time: 10 Hrs</span><br>
                 <span>Remaining: 4 Hrs</span>
             </div>
         </div>

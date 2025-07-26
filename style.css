@@ -13,31 +13,30 @@ body{
     font-family: "Crimson Pro", serif;
     color: #eff0ea;
     height: 100vh;
-    width: 95%;
     display: flex;  
-    flex-direction: column;
+    flex-direction: row;
     align-items:center;
-    justify-content:center;
+    justify-content:start;
     /* padding: 1.5em; */
 }
 
 .main{
-    /* border: 1px solid #eff0ea; */
-    margin:1em;
+    /* border: 0.1em outset #eff0ea; */
+    /* margin:1em; */
     display: flex;
     padding:0.5em;
     height: 100%;
-    max-width: 900px;
+    min-width: 45%;
     align-items: stretch;
     flex-direction: column;
 }
 
 .headerBox{
     display: flex;
-    justify-content: space-between;
-    align-items:center;
+    /* justify-content: space-between; */
+    align-items:stretch;
     flex-direction: row;
-    
+    flex: 0 1 auto;
     /* border: 1px solid #eff0ea; */
     /* gap: 10em; */
     /* padding: 1em; */
@@ -46,22 +45,32 @@ body{
 .appTitleInfo
 {
     display: flex;
-    align-items:end;
+    align-items:center;
     flex-direction: row;
-    justify-content: space-between;
-    /* gap: 10em; */
+    /* justify-content:; */
+    gap: 10em;
     flex:2;
     /* margin-right: 0.5em; */
     padding: 1em;
-    border-right:0.1em solid #eff0ea;
+    /* border-right:0.1em solid #eff0ea; */
     /* border: 1px solid #eff0ea; */
 }
 
 .sessionsInfo{
     padding: 0.5em;
     display: flex;
-    align-items: baseline;
-    /* border: #eff0ea 1px solid; */
+     flex: initial;
+    width:10.2em;
+    justify-content:space-between;
+    border-left: #eff0ea 0.1em solid;
+}
+
+.appInfo{
+    flex: 1;
+    padding: 0.5em;
+    display: flex;
+    justify-content:end;
+    align-self: center;
 }
 
 .sessionCount{
@@ -73,10 +82,13 @@ body{
     display: flex;
     flex-direction: row;
     justify-content:space-between;
-    align-items: center;
-    border-top: 1px solid #eff0ea;
+    align-items: baseline;
+    border-top: 0.1em solid #eff0ea;
     padding: 0.2em;
+    /* flex: 1 1 auto; */
+    /* border: #eff0ea 1px solid; */
     
+
 }
 
 .ctrlButtons,
@@ -87,6 +99,8 @@ body{
     align-items: center;
     gap: 2em;
     margin: 0.5em;
+    flex-wrap: wrap;
+
 }
 .ctrlButtons{
     border-right:0.1em solid #eff0ea;
@@ -102,42 +116,65 @@ button{
 .timerDisplayBox{
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
-    align-items: center;
-    border-top: 1px solid #eff0ea;
+    justify-content:start;
+    /* align-items:; */
+    /* gap: 3.62em; */
+    border-top: 0.1em solid #eff0ea;
+    /* flex: 1 1 auto; */
+    /* border: #eff0ea 1px solid; */
     /* padding: 0.5em; */
 }
 
 .timerBox{
-   display: flex;
-    align-items:center;
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 3em;
+    display: flex;
+    align-items:flex-start;
+    flex-direction: column;
+    justify-content:space-between;
     flex:2;
     /* margin-right: 0.5em; */
-    padding: 1em;
-    border-right:0.1em solid #eff0ea;
+    padding: 0.5em;
+    /* border: #eff0ea 1px solid; */
 }
 
+.timer{
+    font-size: 10em;
+    color: #a83642;
+    font-weight: 500;
+    flex: 2;
+    /* border: #eff0ea 1px solid; */
+    /* margin-right: 0.5em; */
+}
+
+
 .taskName{
-    font-size: 1em;
+    font-size: 1.2em;
+    padding-left: 0.5em ;
+    flex: 1;
+    align-self: flex-start;
+        /* border: #eff0ea 1px solid; */
+
 }
 
 .estimatedTime{
+    flex-direction: column;
+    align-items: start;
+    border-left:0.1em solid #eff0ea;
     padding: 0.5em;
     display: flex;
-    flex-direction: column;
-    align-items: start 
+     flex: initial;
+    width:10.2em;
 }
 
 .tasksBox{
-     display: flex;
+    display: flex;
     flex-direction: column;
     justify-content:start;
     align-items: start;
-    border-top: 1px solid #eff0ea;
-    border-bottom: 1px solid #eff0ea;
+    border-top: 0.1em solid #eff0ea;
+    border-bottom: 0.1em solid #eff0ea;
+    
+    flex: 3 1 auto;
+    /* border: #eff0ea 1px solid; */
 
     padding: 0.5em;
 }
@@ -145,3 +182,19 @@ button{
 .addTaskContainer, #taskList{
     margin-left: 2em;
 }
+
+input{
+    background-color: #282828;
+    border: #282828 0.1em solid;
+    color: #eff0ea;
+    border: none;
+    padding: 0.5em;
+    font-size: 0.8em;
+    width: 100%;
+}
+
+input:focus{
+    outline: none;
+    border:none;
+}
+
