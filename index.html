@@ -10,11 +10,11 @@
     <div class="main">
         <div class="headerBox">
             <div class="appTitleInfo">
-                <h1 class="appTitle">POMODI</h1>
+                <h2 class="appTitle">POMODI</h2>
                 <span class="infoIcon">i</span>
             </div>
             <div class="sessionsInfo">
-                <span class="sessionLabel">Sessions completed</span>
+                <span class="sessionLabel">Sessions spent:</span>
                 <span class="sessionCount">007</span>
             </div>
         </div>
@@ -23,6 +23,7 @@
             <div class="ctrlButtons">
                  <button class="button" id="playPauseBtn" >Pause</button>
                  <button class="button" id="resetBtn" >Reset</button>
+                 <span class="divider"></span>
             </div>
             <div class="sessionButtons">
                 <button class="">25:00</button>
@@ -35,9 +36,9 @@
             </div>
         </div>
 
-        <div class="timerdisplayBox">
+        <div class="timerDisplayBox">
             <div class="timerBox">
-                <span class="timer"  id="timer">24:00</span>
+                <h1 class="timer"  id="timer">24:00</h1>
                 <span class="taskName">task name</span>
             </div>
             <div class="estimatedTime"> 
@@ -47,11 +48,10 @@
         </div>
 
         <div class="tasksBox">
-            <h2>Tasks</h2>
+            <h3>Tasks</h3>
 
             <div class="addTaskContainer">
-                <input type="text" id="newTaskInput" 
-                placeholder="Add a task?" />
+                <input type="text" id="newTaskInput"/>
                 <button id="addTaskButton">+</button>
             </div>
 

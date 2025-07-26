@@ -1,22 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pangolin&family=Syne+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
-
-.syne-mono-regular {
-  font-family: "Syne Mono", monospace;
-  font-weight: 400;
-  font-style: normal;
-}
-.pangolin-regular {
-  font-family: "Pangolin", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-.coming-soon-regular {
-  font-family: "Coming Soon", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
 
 *{
@@ -28,86 +10,138 @@
 
 body{
     background-color: #282828;
-  font-family: "Pangolin", cursive;
-    color: #F9FDE5;
-    min-height: 100vh;
+    font-family: "Crimson Pro", serif;
+    color: #eff0ea;
+    height: 100vh;
+    width: 95%;
     display: flex;  
     flex-direction: column;
     align-items:center;
-    justify-content: center;
-    padding: 1em;
+    justify-content:center;
+    /* padding: 1.5em; */
 }
 
 .main{
-    display: flex;  
+    /* border: 1px solid #eff0ea; */
+    margin:1em;
+    display: flex;
+    padding:0.5em;
+    height: 100%;
+    max-width: 900px;
+    align-items: stretch;
     flex-direction: column;
+}
+
+.headerBox{
+    display: flex;
+    justify-content: space-between;
     align-items:center;
-    justify-content: center;
-    gap: 2em;
-    padding: 2em;
-    margin: 2em;
+    flex-direction: row;
+    
+    /* border: 1px solid #eff0ea; */
+    /* gap: 10em; */
+    /* padding: 1em; */
+}
 
-    max-width: 90%;
-    min-width: 300px;
+.appTitleInfo
+{
+    display: flex;
+    align-items:end;
+    flex-direction: row;
+    justify-content: space-between;
+    /* gap: 10em; */
+    flex:2;
+    /* margin-right: 0.5em; */
+    padding: 1em;
+    border-right:0.1em solid #eff0ea;
+    /* border: 1px solid #eff0ea; */
+}
 
+.sessionsInfo{
+    padding: 0.5em;
+    display: flex;
+    align-items: baseline;
+    /* border: #eff0ea 1px solid; */
+}
+
+.sessionCount{
+    color: #a83642;
+    font-size: 2em;
+}
+
+.sessionBox{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    border-top: 1px solid #eff0ea;
+    padding: 0.2em;
     
 }
 
-.ctrlButtons{
-    display: flex;  
+.ctrlButtons,
+.sessionButtons{
+    display: flex;
     flex-direction: row;
-    align-items:center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1em;
+    justify-content:space-evenly;
+    align-items: center;
+    gap: 2em;
+    margin: 0.5em;
+}
+.ctrlButtons{
+    border-right:0.1em solid #eff0ea;
+}
 
-    width: 100%;
-    padding: 1em;
+button{
+    border: none;
+    font-family: "Pangolin", cursive;
+    color: #eff0ea;
+    background-color: #282828;
+}
+
+.timerDisplayBox{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    border-top: 1px solid #eff0ea;
+    /* padding: 0.5em; */
 }
 
 .timerBox{
-    font-size: 8em;
-    text-align: center;
-    max-width: 100%;
-    
+   display: flex;
+    align-items:center;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 3em;
+    flex:2;
+    /* margin-right: 0.5em; */
+    padding: 1em;
+    border-right:0.1em solid #eff0ea;
 }
 
-.button{
-    background-color: #F9FDE5;
-    color: #282828;
-    border: 1px solid #F9FDE5;
-    padding: 0.5em 1em;
-    font-size: 1.5em;
-    cursor:pointer;
-    border-radius: 1.5em;
-    flex-basis: auto;
-    min-width: fit-content;
-    white-space: nowrap;
+.taskName{
+    font-size: 1em;
 }
 
-.button:hover{
-    background-color: #282828;
-    color: #F9FDE5;
-    border-radius: 1.5em;
-    border: 1px solid #F9FDE5;
+.estimatedTime{
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: start 
 }
 
-@media (max-width: 600px) {
-    .main{
-        padding: 1em;
-        margin: 1em;
-        width: 95%;
-    }
-    .timerBox{
-        font-size: 5em;
-    }
-    .button{
-        font-size: 1.2em;
-        padding: 0.5em 0.8em;
-    }
-    .ctrlButtons{
-       justify-content: space-around;
-        align-items: center;
-        gap: 0.5em;
-    }
+.tasksBox{
+     display: flex;
+    flex-direction: column;
+    justify-content:start;
+    align-items: start;
+    border-top: 1px solid #eff0ea;
+    border-bottom: 1px solid #eff0ea;
+
+    padding: 0.5em;
+}
+
+.addTaskContainer, #taskList{
+    margin-left: 2em;
 }
