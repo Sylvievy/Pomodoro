@@ -1,19 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@0;1&display=swap');
 
+:root {
+    --highlight-color: #a83642;
+    --primary-color: #282828;
+    --secondary-color: #eff0ea;
+    --body-font-weight:500;
+    --title-font-weight:600;
+}
 
-
+.lightMode{
+    --highlight-color: #a83642;
+    --primary-color: #eff0ea;
+    --secondary-color: #282828;
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 body{
-    background-color: #282828;
+    background-color: var(--primary-color);
     font-family: "Xanh Mono", monospace;
-    font-weight: 200;
-    color: #eff0ea;
+    /* font-weight: 200; */
+    color: var(--secondary-color);
     height: 100vh;
     display: flex;  
     flex-direction: row;
@@ -23,7 +33,8 @@ body{
 }
 
 .main{
-    /* border: 0.1em outset #eff0ea; */
+    /* border-left: 0.1em outset var(--secondary-color);
+    border-right:0.1em outset var(--secondary-color); */
     /* margin:1em; */
     display: flex;
     padding:2.5em;
@@ -62,6 +73,44 @@ body{
     /* border: 1px solid #eff0ea; */
 }
 
+.appInfo{
+    display: flex;
+    align-items:end;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    flex: initial;
+}
+.themeToggle{
+    display: flex;
+    align-items:end;
+    transform: scaleX(-1);
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    flex: initial;
+}
+
+.themeToggle svg,
+.appInfo svg{
+    fill: var(--secondary-color);
+}
+
+.themeToggle svg:last-child{
+    display: none;
+}
+
+.lightMode .themeToggle svg:first-child{
+    display: none;
+}
+
+.lightMode .themeToggle svg:last-child{
+    display: block;
+}
 
 .sessionsInfo{
     padding: 0.5em;
@@ -69,27 +118,21 @@ body{
     flex: initial;
     width:13em;
     justify-content:space-between;
-    border-left: #eff0ea 0.1em solid;
+    border-left: var(--secondary-color) 0.1em solid;
 }
 
-.appInfo,
 .sessionsInfo,
 .estimatedTime,
 .ctrlButtons,
 .sessionButtons{
     font-size: 1em;
+    font-weight:var(--body-font-weight) ;
 }
 
-.appInfo{
-    flex: 1;
-    padding: 0.5em;
-    display: flex;
-    justify-content:end;
-    align-self: center;
-}
+
 
 .sessionCount{
-    color: #a83642;
+    color: var(--highlight-color);
     font-size: 2em;
 }
 
@@ -98,7 +141,7 @@ body{
     flex-direction: row;
     justify-content:space-between;
     align-items: baseline;
-    border-top: 0.1em solid #eff0ea;
+    border-top: 0.1em solid var(--secondary-color);
     padding: 0.1em;
     flex: 0 1 auto; 
     font-size: large;
@@ -116,23 +159,23 @@ body{
     gap: 2em;
     margin: 0.5em;
     flex-wrap: wrap;
-    padding-left: 0.5em;
-    
+    padding-left: 0.5em;    
 }
-.ctrlButtons{
-    border-right:0.1em solid #eff0ea;
+.sessionButtons{
+    flex: 2;
+    border-left:0.1em solid var(--secondary-color);
 }
 
 button{
-    border:#282828 0.2em solid;
-  font-family: "Xanh Mono", monospace;
-    color: #eff0ea;
-    background-color: #282828;
+    border:var(--primary-color) 0.2em solid;
+    font-family: "Xanh Mono", monospace;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
     transition: 0.3s ease;
 }
 
 button:hover{
-    border-bottom: #a83642 0.2em solid;
+    border-bottom: var(--highlight-color) 0.2em solid;
 }
 
 .timerDisplayBox{
@@ -141,7 +184,7 @@ button:hover{
     justify-content:flex-start;
     /* align-items:; */
     /* gap: 3.62em; */
-    border-top: 0.1em solid #eff0ea;
+    border-top: 0.1em solid var(--secondary-color);
     /* flex: 1 1 auto; */
     /* border: #eff0ea 1px solid; */
     /* padding: 0.5em; */
@@ -160,8 +203,8 @@ button:hover{
 
 .timer{
     font-size: 10em;
-    color: #a83642;
-    font-weight: 500;
+    color: var(--highlight-color);
+    font-weight: var(--body-font-weight);
     flex: 2;
     /* border: #eff0ea 1px solid; */
     /* margin-right: 0.5em; */
@@ -180,7 +223,7 @@ button:hover{
 .estimatedTime{
     flex-direction: column;
     align-items: start;
-    border-left:0.1em solid #eff0ea;
+    border-left:0.1em solid var(--secondary-color);
     padding: 0.5em;
     display: flex;
     flex: initial;
@@ -192,8 +235,8 @@ button:hover{
     flex-direction: column;
     justify-content:flex-start;
     align-items: flex-start;
-    border-top: 0.1em solid #eff0ea;
-    border-bottom: 0.1em solid #eff0ea;
+    border-top: 0.1em solid var(--secondary-color);
+    border-bottom: 0.1em solid var(--secondary-color);
     flex: 3 1 auto;
     /* border: #eff0ea 1px solid; */
 
@@ -202,13 +245,13 @@ button:hover{
 
 h3{
     padding-left: 0.5em;
-    font-weight: 500;
+    font-weight: var(--body-font-weight);
     font-size:1.52em;
 }
 
 h1,h2{
-    font-weight: 600;
-    color: #eff0ea;
+    font-weight: var(--title-font-weight);
+    color: var(--secondary-color);
 }
 
 .addTaskContainer, #taskList{
@@ -216,9 +259,9 @@ h1,h2{
 }
 
 input{
-    background-color: #282828;
-    border: #282828 0.1em solid;
-    color: #eff0ea;
+    background-color: var(--primary-color);
+    border: var(--primary-color) 0.1em solid;
+    color: var(--secondary-color);
     border: none;
     padding: 0.5em;
     font-size: 0.8em;
@@ -231,4 +274,5 @@ input:focus{
     font-family: "Xanh Mono", monospace;
 
 }
+
 
