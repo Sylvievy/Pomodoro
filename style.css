@@ -124,10 +124,15 @@ body{
 }
 
 button{
-    border: none;
+    border:#282828 0.2em solid;
   font-family: "Xanh Mono", monospace;
     color: #eff0ea;
     background-color: #282828;
+    transition: 0.3s ease;
+}
+
+button:hover{
+    border-bottom: #a83642 0.2em solid;
 }
 
 .timerDisplayBox{

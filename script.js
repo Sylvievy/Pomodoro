@@ -1,10 +1,19 @@
 const timerDisplay = document.getElementById('timer');
 const playPauseBtn = document.getElementById('playPauseBtn');
 const resetBtn = document.getElementById('resetBtn');
+const sessionBtn = document.querySelectorAll('.session-duration-button');
+const customBtn = document.querySelector('.custom');
+
 
 let isPaused = true;
-let totalSeconds = 24*60;
+// let totalSeconds = 25*60;
 let intervalID;
+let currentSessionDuration = 25*60;
+let isBreak = false;
+let breakTime = 5*60;
+let longBreakTime = 15*60;
+let customTime = 0;
+let sessionCount = 0;
 
 const updateDisplay = () => {
     const minutes = Math.floor(totalSeconds / 60);
@@ -14,7 +23,6 @@ const updateDisplay = () => {
 }
 
 const startTimer = () => {
-
     clearInterval(intervalID)
     isPaused = false;
     playPauseBtn.textContent = 'pause';
@@ -25,33 +33,60 @@ const startTimer = () => {
         if (totalSeconds < 0) {
             clearInterval(intervalID);
             timerDisplay.textContent="00:00";
-            alert("Time's up!");
-            isPaused = true;
-            playPauseBtn.textContent = 'play';
+
+            // alert("Time's up!");
+            // isPaused = true;
+            // playPauseBtn.textContent = 'play';
+
+            if (isBreak){
+                //break ended;new session
+                isBreak = false;
+                totalSeconds = currentSessionDuration;
+                updateDisplay();
+                alert("Break time is over! Back to work.");
+                startTimer();
+            }else{
+                //session ended; start break
+                sessionCount++;
+                isBreak = true;
+                if (sessionCount % 4 === 0) {
+                    totalSeconds = longBreakTime; 
+                    alert("Time for a long break!");
+                } else {
+                    totalSeconds = breakTime;
+                    alert("Time for a break!");
+                }
+                updateDisplay();
+                startTimer();
+            }
+            isPaused = false;
+            playPauseBtn.textContent = 'pause';
         }else{
             updateDisplay();
         }
     },1000);
-    console.log("Timer started.")
+    console.log(`Timer started  for ${totalseconds/60} minutes}`)
 };
 
 const pauseTimer = () => {
     clearInterval(intervalID);
     isPaused = true;
     playPauseBtn.textContent = 'play';
-    console.log("Timer paused.");
-}
+    console.log(`Timer paused. `);
+};
 
 const resetTimer = () => {
     clearInterval(intervalID);
-    totalSeconds =1500; // Reset to 1 minute
+    totalSeconds = currentSessionDuration;
     isPaused = true;
+    isBreak = false;
     updateDisplay();
     playPauseBtn.textContent = 'play';
     console.log("Timer reset.");
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+    totalSeconds = currentSessionDuration; // Initialize with default session duration
     updateDisplay();
 
     if(isPaused){
@@ -69,5 +104,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     resetBtn.addEventListener('click', resetTimer);
+    sessionBtn.forEach(button => {
+        button.addEventListener('click', () =>{
+            const duration = parseInt(button.dataset.duration);
+            if (!isNaN(duration)) {
+                currentSessionDuration = duration * 60;
+                totalSeconds = currentSessionDuration;
+                isBreak = false;
+                clearInterval(intervalID);
+                isPaused = true;
+                playPauseBtn.textContent = 'play';
+                updateDisplay();
+                console.log(`Session duration set to ${duration} minutes.`);
+            }
+        });
+    });
+
+    customBtn.addEventListener('click', () => {
+        const customMinutes = prompt("Enter cusotm sesionduration in  minutes:");
+        if (customMinutes !== null){
+            const duration = parseInt(customMinutes);
+            if (!isNaN(duration) && duration > 0) {
+                currentSessionDuration = duration * 60;
+                totalSeconds = currentSessionDuration;
+                isBreak = false;
+                clearInterval(intervalID);
+                isPaused = true;
+                playPauseBtn.textContent = 'play';
+                updateDisplay();
+                console.log(`Custom session duration set to ${duration} minutes.`);
+            } else {
+                alert("Please enter a valid positive number.");
+            }
+        }
+    });
 });
 
