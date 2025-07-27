@@ -64,14 +64,18 @@
         <div class="tasksBox">
             <h3 class="tasksTitle">TASKS</h3>
 
-            <div class="addTaskContainer">
-                <input type="text" id="newTaskInput"/>
-                <button id="addTaskButton">+</button>
+            <div class="addTaskContainer" id="addTaskInitialContainer">
+                <button id="addTaskButton" class="add-task-button">+</button>
             </div>
 
             <ul id="taskList">
             </ul>
     </div>
+
+
+    <audio id="typewriterClickSound" src="sounds/typewriterClik.wav" preload="auto"></audio>
+    <audio id="dingSound" src="sounds/ding.wav" preload="auto"></audio>
+    <audio id="stampSound" src="sounds/stamp.wav" preload="auto"></audio>
 
     <script src="timer.js" defer></script>
     <script src="lightMode.js"></script>

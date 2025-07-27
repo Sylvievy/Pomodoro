@@ -8,11 +8,11 @@
     --title-font-weight:600;
 }
 
-.lightMode{
-    --highlight-color: #a83642;
+body.lightMode{
     --primary-color: #eff0ea;
     --secondary-color: #282828;
 }
+
 *{
     margin: 0;
     padding: 0;
@@ -22,14 +22,13 @@
 body{
     background-color: var(--primary-color);
     font-family: "Xanh Mono", monospace;
-    /* font-weight: 200; */
     color: var(--secondary-color);
     height: 100vh;
     display: flex;  
     flex-direction: row;
     align-items:center;
     justify-content:start;
-    /* padding: 1.5em; */
+    transition: background-color 0.2s ease, color 0.5s ease;
 }
 
 .main{
@@ -88,17 +87,27 @@ body{
     align-items:end;
     transform: scaleX(-1);
     justify-content: center;
+    background-color: transparent; 
     height: 50px;
     width: 50px;
     padding: 0;
     border-radius: 50%;
     flex: initial;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+
+
 }
 
 .themeToggle svg,
 .appInfo svg{
     fill: var(--secondary-color);
+    transition: fill 0.5s ease;
 }
+
+
+
 
 .themeToggle svg:last-child{
     display: none;
@@ -119,6 +128,8 @@ body{
     width:13em;
     justify-content:space-between;
     border-left: var(--secondary-color) 0.1em solid;
+    transition: border-color 0.5s ease;
+
 }
 
 .sessionsInfo,
@@ -127,6 +138,8 @@ body{
 .sessionButtons{
     font-size: 1em;
     font-weight:var(--body-font-weight) ;
+    transition: color 0.5s ease;
+
 }
 
 
@@ -145,6 +158,8 @@ body{
     padding: 0.1em;
     flex: 0 1 auto; 
     font-size: large;
+    transition: border-color 0.5s ease;
+
     /* border: #eff0ea 1px solid; */
     
 
@@ -164,14 +179,21 @@ body{
 .sessionButtons{
     flex: 2;
     border-left:0.1em solid var(--secondary-color);
+    transition: border-color 0.5s ease;
+
 }
 
+.ctrlButtons :first-child{
+    width: 40px;
+    flex: initial;
+}
 button{
     border:var(--primary-color) 0.2em solid;
     font-family: "Xanh Mono", monospace;
     color: var(--secondary-color);
     background-color: var(--primary-color);
-    transition: 0.3s ease;
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, transform 0.3s ease;
+
 }
 
 button:hover{
@@ -182,12 +204,9 @@ button:hover{
     display: flex;
     flex-direction: row;
     justify-content:flex-start;
-    /* align-items:; */
-    /* gap: 3.62em; */
     border-top: 0.1em solid var(--secondary-color);
-    /* flex: 1 1 auto; */
-    /* border: #eff0ea 1px solid; */
-    /* padding: 0.5em; */
+    transition: border-color 0.5s ease;
+
 }
 
 .timerBox{
@@ -216,7 +235,9 @@ button:hover{
     padding-left: 0.5em ;
     flex: 1;
     align-self: flex-start;
-        /* border: #eff0ea 1px solid; */
+    /* border: #eff0ea 1px solid; */
+    transition: color 0.5s ease;
+
 
 }
 
@@ -228,6 +249,8 @@ button:hover{
     display: flex;
     flex: initial;
     width:13em;
+    transition: border-color 0.5s ease, color 0.5s ease;
+
 }
 
 .tasksBox{
@@ -239,6 +262,7 @@ button:hover{
     border-bottom: 0.1em solid var(--secondary-color);
     flex: 3 1 auto;
     /* border: #eff0ea 1px solid; */
+    transition: border-color 0.5s ease;
 
     padding:1em 1em;
 }
@@ -247,11 +271,15 @@ h3{
     padding-left: 0.5em;
     font-weight: var(--body-font-weight);
     font-size:1.52em;
+    transition: color 0.5s ease;
+
 }
 
 h1,h2{
     font-weight: var(--title-font-weight);
     color: var(--secondary-color);
+    transition: color 0.5s ease;
+
 }
 
 .addTaskContainer, #taskList{
@@ -266,6 +294,8 @@ input{
     padding: 0.5em;
     font-size: 0.8em;
     width: 100%;
+    transition: background-color 0.5s ease, color 0.5s ease;
+
 }
 
 input:focus{
