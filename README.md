@@ -1,7 +1,7 @@
 # Pomodoro
 A project to learn JS for React
 
-A basic web-based Pomodoro timer that allows users to start, pause, and reset focused work sessions and short breaks
+A basic web-based Pomodoro timer that allows users to start, pause, and reset focused work sessions.
 
  Key Learning Goals for This Project
 - **MVP:**
@@ -10,3 +10,6 @@ A basic web-based Pomodoro timer that allows users to start, pause, and reset fo
     - Implement robust conditional logic (`if/else`, `switch`) for timer states and transitions.
     - Practice event handling (`addEventListener` for button clicks).
     - Successfully deploy a basic web application using GitHub Pages.
+
+
+Click on this to see : [⏲️](https://sylvievy.github.io/Pomodoro/)
