@@ -43,6 +43,7 @@ body{
     margin: 1em auto;
     align-items: stretch;
     flex-direction: column;
+    flex-flow: column;
 }
 
 h3{
