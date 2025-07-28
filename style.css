@@ -45,6 +45,21 @@ body{
     flex-direction: column;
 }
 
+h3{
+    padding-left: 0.5em;
+    font-weight: var(--body-font-weight);
+    font-size:1.52em;
+    transition: color 0.5s ease;
+
+}
+
+h1,h2{
+    font-weight: var(--title-font-weight);
+    color: var(--secondary-color);
+    transition: color 0.5s ease;
+
+}
+
 .headerBox{
     display: flex;
     /* justify-content: space-between; */
@@ -82,6 +97,7 @@ body{
     border-radius: 50%;
     flex: initial;
 }
+
 .themeToggle{
     display: flex;
     align-items:end;
@@ -105,9 +121,6 @@ body{
     fill: var(--secondary-color);
     transition: fill 0.5s ease;
 }
-
-
-
 
 .themeToggle svg:last-child{
     display: none;
@@ -142,8 +155,6 @@ body{
 
 }
 
-
-
 .sessionCount{
     color: var(--highlight-color);
     font-size: 2em;
@@ -176,6 +187,7 @@ body{
     flex-wrap: wrap;
     padding-left: 0.5em;    
 }
+
 .sessionButtons{
     flex: 2;
     border-left:0.1em solid var(--secondary-color);
@@ -187,6 +199,7 @@ body{
     width: 40px;
     flex: initial;
 }
+
 button{
     border:var(--primary-color) 0.2em solid;
     font-family: "Xanh Mono", monospace;
@@ -229,7 +242,6 @@ button:hover{
     /* margin-right: 0.5em; */
 }
 
-
 .taskName{
     font-size: 1.2em;
     padding-left: 0.5em ;
@@ -263,28 +275,244 @@ button:hover{
     flex: 3 1 auto;
     /* border: #eff0ea 1px solid; */
     transition: border-color 0.5s ease;
-
     padding:1em 1em;
 }
 
-h3{
-    padding-left: 0.5em;
-    font-weight: var(--body-font-weight);
-    font-size:1.52em;
-    transition: color 0.5s ease;
+.addTaskContainer{
+    margin-left: 2em;
+    margin-bottom: 1em;
 
 }
 
-h1,h2{
-    font-weight: var(--title-font-weight);
+#taskList{
+    list-style: none;
+    width: calc(100% - 2em);
+}
+
+.add-task-button {
+    background-color: transparent;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    font-family: "Xanh Mono", monospace;
+    font-size: 1.5em;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-task-button:hover {
+    border-color: var(--highlight-color);
+    color: var(--highlight-color);
+    border-bottom: var(--highlight-color) 2px solid;
+}
+
+.empty-state {
+    text-align: center;
+    color: rgba(239, 240, 234, 0.6);
+    font-style: italic;
+    margin: 2em 0;
+    font-size: 0.9em;
+}
+
+.newTaskInputContainer {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin: 1em 0;
+    padding: 0.5em;
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    background-color: rgba(239, 240, 234, 0.05);
+}
+
+.taskInputField {
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    color: var(--secondary-color);
+    font-family: "Xanh Mono", monospace;
+    font-size: 1em;
+    outline: none;
+    padding: 0.5em;
+}
+
+.taskInputField::placeholder {
+    color: rgba(239, 240, 234, 0.5);
+}
+
+.addTask-button {
+    background-color: var(--highlight-color);
+    border: none;
+    color: white;
+    font-family: "Xanh Mono", monospace;
+    font-size: 1.2em;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.addTask-button:hover {
+    background-color: #8b2d36;
+    border-bottom: none;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 0.8em;
+    margin: 0.5em 0;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    background-color: rgba(239, 240, 234, 0.05);
+    position: relative;
+}
+
+.task-item:hover {
+    border-color: var(--secondary-color);
+    background-color: rgba(239, 240, 234, 0.1);
+}
+
+.task-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-image: repeating-linear-gradient(
+        to right,
+        var(--highlight-color) 0,
+        var(--highlight-color) 3px,
+        transparent 3px,
+        transparent 8px
+    );
+    opacity: 0.7;
+}
+
+.task-item.completed {
+    opacity: 0.7;
+    background-color: rgba(168, 54, 66, 0.1);
+}
+
+.task-item.completed::after {
+    background-image: repeating-linear-gradient(
+        to right,
+        #4a9 0,
+        #4a9 3px,
+        transparent 3px,
+        transparent 8px
+    );
+}
+
+.task-item.irrelevant {
+    opacity: 0.5;
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+.task-item.irrelevant::after {
+    background-image: repeating-linear-gradient(
+        to right,
+        #888 0,
+        #888 3px,
+        transparent 3px,
+        transparent 8px
+    );
+}
+
+.bujoDot {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--secondary-color);
+    width: 20px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.task-item.completed .bujoDot {
+    color: #4a9;
+}
+
+.task-item.irrelevant .bujoDot {
+    color: #888;
+}
+
+.taskText {
+    flex: 1;
+    font-family: "Xanh Mono", monospace;
+    font-size: 1em;
     color: var(--secondary-color);
     transition: color 0.5s ease;
-
+    font-weight: var(--body-font-weight);
 }
 
-.addTaskContainer, #taskList{
-    margin-left: 2em;
+.task-item.completed .taskText {
+    text-decoration: line-through;
+    color: rgba(239, 240, 234, 0.7);
 }
+
+.task-item.irrelevant .taskText {
+    text-decoration: line-through;
+    color: rgba(239, 240, 234, 0.5);
+}
+
+.bujoActions {
+    display: flex;
+    gap: 0.5em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.task-item:hover .bujoActions {
+    opacity: 1;
+}
+
+.bujoCompleteButton,
+.bujoIrrelevantButton,
+.bujoDeleteButton {
+    background: none;
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    cursor: pointer;
+    font-size: 0.9em;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    font-family: "Xanh Mono", monospace;
+}
+
+.bujoCompleteButton:hover {
+    border-color: #4a9;
+    color: #4a9;
+    background-color: rgba(68, 170, 153, 0.1);
+    border-bottom: 1px solid #4a9;
+}
+
+.bujoIrrelevantButton:hover {
+    border-color: #888;
+    color: #888;
+    background-color: rgba(136, 136, 136, 0.1);
+    border-bottom: 1px solid #888;
+}
+
+.bujoDeleteButton:hover {
+    border-color: var(--highlight-color);
+    color: var(--highlight-color);
+    background-color: rgba(168, 54, 66, 0.1);
+    border-bottom: 1px solid var(--highlight-color);
+}
+
 
 input{
     background-color: var(--primary-color);
@@ -302,7 +530,7 @@ input:focus{
     outline: none;
     border:none;
     font-family: "Xanh Mono", monospace;
-
 }
+
 
 

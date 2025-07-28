@@ -22,7 +22,7 @@ const playSound = (soundElement) => {
     soundElement.pause();
     soundElement.currentTime = 0; 
     soundElement.play().catch(error => {
-        console.error("Error playing sound:", error);
+    console.error("Error playing sound:", error);
     });
 
 }
@@ -48,7 +48,6 @@ const startTimer = () => {
             timerDisplay.textContent="00:00";
             playSound(dingSound);
             
-            // alert("Time's up!");
             // isPaused = true;
             // playPauseBtn.textContent = 'play';
 
@@ -57,7 +56,6 @@ const startTimer = () => {
                 isBreak = false;
                 totalSeconds = currentSessionDuration;
                 updateDisplay();
-                // alert("Break time is over! Back to work.");
                 startTimer();
             }else{
                 //session ended; start break
@@ -65,12 +63,10 @@ const startTimer = () => {
                 isBreak = true;
                 if (sessionCount % 4 === 0) {
                     totalSeconds = longBreakTime; 
-                    // alert("Time for a long break!");
                 } else {
                     playSound(dingSound);
                     totalSeconds = breakTime;
 
-                    // alert("Time for a break!");
                 }
                 updateDisplay();
                 startTimer();
@@ -81,7 +77,7 @@ const startTimer = () => {
             updateDisplay();
         }
     },1000);
-    console.log(`Timer started  for ${totalseconds/60} minutes}`)
+    console.log(`Timer started  for ${totalSeconds/60} minutes`)
 };
 
 const pauseTimer = () => {
