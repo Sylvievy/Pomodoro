@@ -67,7 +67,7 @@ h1,h2{
     flex-direction: row;
     flex: 0 1 auto;
     /* border: 1px solid #eff0ea; */
-    /* gap: 10em; */
+    gap: 0.1em;
     /* padding: 1em; */
 }
 
@@ -220,6 +220,7 @@ button:hover{
     border-top: 0.1em solid var(--secondary-color);
     transition: border-color 0.5s ease;
     flex-wrap: wrap;
+    flex-shrink: 1;
 
 }
 
@@ -267,18 +268,19 @@ button:hover{
 }
 
 .tasksBox{
-    display: flex;
+    display: flex
+;
     flex-direction: column;
-    justify-content:flex-start;
+    justify-content: flex-start;
     gap: 0.5em;
     align-items: flex-start;
     border-top: 0.1em solid var(--secondary-color);
     border-bottom: 0.1em solid var(--secondary-color);
-    flex: 3 1 auto;
+    flex: 2 1 0;
+    height: 20em;
     /* border: #eff0ea 1px solid; */
     transition: border-color 0.5s ease;
-    padding:1em 1em;
-    min-height: 0;
+    padding: 1em 1em;
 }
 
 .addTaskContainer{
@@ -290,6 +292,7 @@ button:hover{
 #taskList{
     list-style: none;
     overflow-y: auto;
+    min-height: 0;
 
     width: calc(100% - 12em);
 }

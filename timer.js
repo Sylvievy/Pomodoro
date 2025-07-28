@@ -4,8 +4,8 @@ const resetBtn = document.getElementById('resetBtn');
 const sessionBtn = document.querySelectorAll('.session-duration-button');
 const customBtn = document.querySelector('.custom');
 
-const typewriterClickSound = document.getElementById('typewriterClickSound');
-const dingSound = document.getElementById('dingSound');
+const typewriterClickSoundTimer = document.getElementById('typewriterClickSound');
+const dingSoundTimer = document.getElementById('dingSound');
 const stampSound = document.getElementById('stampSound');
 
 let isPaused = true;
@@ -38,7 +38,7 @@ const startTimer = () => {
     clearInterval(intervalID)
     isPaused = false;
     playPauseBtn.textContent = 'pause';
-    playSound(typewriterClickSound);
+    playSound(typewriterClickSoundTimer);
 
     intervalID = setInterval(() => {
         totalSeconds--;
@@ -46,7 +46,7 @@ const startTimer = () => {
         if (totalSeconds < 0) {
             clearInterval(intervalID);
             timerDisplay.textContent="00:00";
-            playSound(dingSound);
+            playSound(dingSoundTimer);
             
             // isPaused = true;
             // playPauseBtn.textContent = 'play';
@@ -64,7 +64,7 @@ const startTimer = () => {
                 if (sessionCount % 4 === 0) {
                     totalSeconds = longBreakTime; 
                 } else {
-                    playSound(dingSound);
+                    playSound(dingSoundTimer);
                     totalSeconds = breakTime;
 
                 }
@@ -85,7 +85,7 @@ const pauseTimer = () => {
     isPaused = true;
     playPauseBtn.textContent = 'play';
     console.log(`Timer paused. `);
-    playSound(typewriterClickSound);
+    playSound(typewriterClickSoundTimer);
 };
 
 const resetTimer = () => {
@@ -95,7 +95,7 @@ const resetTimer = () => {
     isBreak = false;
     updateDisplay();
     playPauseBtn.textContent = 'play';
-    playSound(typewriterClickSound);
+    playSound(typewriterClickSoundTimer);
     console.log("Timer reset.");
 };
 
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 isPaused = true;
                 playPauseBtn.textContent = 'play';
                 updateDisplay();
-                playSound(typewriterClickSound);
+                playSound(typewriterClickSoundTimer);
                 console.log(`Session duration set to ${duration} minutes.`);
             }
         });
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 isPaused = true;
                 playPauseBtn.textContent = 'play';
                 updateDisplay();
-                playSound(typewriterClickSound);
+                playSound(typewriterClickSoundTimer);
                 console.log(`Custom session duration set to ${duration} minutes.`);
             } else {
                 alert("Please enter a valid positive number.");
