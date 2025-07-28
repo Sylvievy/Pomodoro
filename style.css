@@ -219,6 +219,7 @@ button:hover{
     justify-content:flex-start;
     border-top: 0.1em solid var(--secondary-color);
     transition: border-color 0.5s ease;
+    flex-wrap: wrap;
 
 }
 
@@ -234,7 +235,7 @@ button:hover{
 }
 
 .timer{
-    font-size: 10em;
+    font-size: 8em;
     color: var(--highlight-color);
     font-weight: var(--body-font-weight);
     flex: 2;
@@ -269,6 +270,7 @@ button:hover{
     display: flex;
     flex-direction: column;
     justify-content:flex-start;
+    gap: 0.5em;
     align-items: flex-start;
     border-top: 0.1em solid var(--secondary-color);
     border-bottom: 0.1em solid var(--secondary-color);
@@ -276,22 +278,25 @@ button:hover{
     /* border: #eff0ea 1px solid; */
     transition: border-color 0.5s ease;
     padding:1em 1em;
+    min-height: 0;
 }
 
 .addTaskContainer{
     margin-left: 2em;
-    margin-bottom: 1em;
+    /* margin-bottom: 0.5em; */
 
 }
 
 #taskList{
     list-style: none;
-    width: calc(100% - 2em);
+    overflow-y: auto;
+
+    width: calc(100% - 12em);
 }
 
-.add-task-button {
+.addTaskButton {
     background-color: transparent;
-    border: 2px solid var(--secondary-color);
+    border: 3em solid var(--primary-color);
     color: var(--secondary-color);
     font-family: "Xanh Mono", monospace;
     font-size: 1.5em;
@@ -305,7 +310,7 @@ button:hover{
     justify-content: center;
 }
 
-.add-task-button:hover {
+.addTaskButton:hover {
     border-color: var(--highlight-color);
     color: var(--highlight-color);
     border-bottom: var(--highlight-color) 2px solid;
@@ -325,9 +330,9 @@ button:hover{
     gap: 1em;
     margin: 1em 0;
     padding: 0.5em;
-    border: 1px solid var(--secondary-color);
-    border-radius: 4px;
-    background-color: rgba(239, 240, 234, 0.05);
+    background-color:transparent;
+    border-bottom: 1px solid var(--secondary-color);
+
 }
 
 .taskInputField {
@@ -335,6 +340,7 @@ button:hover{
     background-color: transparent;
     border: none;
     color: var(--secondary-color);
+
     font-family: "Xanh Mono", monospace;
     font-size: 1em;
     outline: none;
@@ -343,22 +349,27 @@ button:hover{
 
 .taskInputField::placeholder {
     color: rgba(239, 240, 234, 0.5);
+
 }
 
 .addTask-button {
-    background-color: var(--highlight-color);
+    background-color:transparent;
     border: none;
-    color: white;
+    color: var(--secondary-color);
     font-family: "Xanh Mono", monospace;
     font-size: 1.2em;
-    width: 30px;
-    height: 30px;
+    width: 2em;
+    height: 1em;
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
-    align-items: center;
+    align-items:center;
     justify-content: center;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 .addTask-button:hover {
@@ -375,14 +386,11 @@ button:hover{
     border: 1px solid transparent;
     border-radius: 4px;
     transition: all 0.3s ease;
-    background-color: rgba(239, 240, 234, 0.05);
+    background-color:transparent;
+    border-bottom: 1px solid var(--secondary-color); 
     position: relative;
 }
 
-.task-item:hover {
-    border-color: var(--secondary-color);
-    background-color: rgba(239, 240, 234, 0.1);
-}
 
 .task-item::after {
     content: '';
@@ -391,44 +399,18 @@ button:hover{
     left: 0;
     right: 0;
     height: 2px;
-    background-image: repeating-linear-gradient(
-        to right,
-        var(--highlight-color) 0,
-        var(--highlight-color) 3px,
-        transparent 3px,
-        transparent 8px
-    );
-    opacity: 0.7;
+    background-color: transparent;
+    /* opacity: 0.7; */
 }
 
 .task-item.completed {
     opacity: 0.7;
-    background-color: rgba(168, 54, 66, 0.1);
-}
-
-.task-item.completed::after {
-    background-image: repeating-linear-gradient(
-        to right,
-        #4a9 0,
-        #4a9 3px,
-        transparent 3px,
-        transparent 8px
-    );
+    background-color: transparent;
 }
 
 .task-item.irrelevant {
     opacity: 0.5;
-    background-color: rgba(128, 128, 128, 0.1);
-}
-
-.task-item.irrelevant::after {
-    background-image: repeating-linear-gradient(
-        to right,
-        #888 0,
-        #888 3px,
-        transparent 3px,
-        transparent 8px
-    );
+    background-color: transparent;
 }
 
 .bujoDot {
@@ -459,7 +441,6 @@ button:hover{
 
 .task-item.completed .taskText {
     text-decoration: line-through;
-    color: rgba(239, 240, 234, 0.7);
 }
 
 .task-item.irrelevant .taskText {

@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded',() => {
 
         const newTaskInput = document.createElement('input');
         newTaskInput.type = 'text';
-        newTaskInput.placeholder = 'Enter task name...';
+        newTaskInput.placeholder = 'Got a task?';
         newTaskInput.classList.add('taskInputField');
 
         const confirmButton = document.createElement('button');
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded',() => {
                 newTaskInput.focus();
                 checkAllTasksCompleted();
             } else {
-                alert('Got no tasks?');
+                alert('Empty task cannot be added.');
             }
         });
 
